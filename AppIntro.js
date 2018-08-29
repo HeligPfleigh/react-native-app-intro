@@ -324,7 +324,7 @@ export default class AppIntro extends Component {
         <Swiper
           loop={false}
           index={this.props.defaultIndex}
-          renderPagination={this.renderPagination}
+          renderPagination={this.props.showDots ? this.renderPagination : () => (<View />)}
           onMomentumScrollEnd={(e, state) => {
             if (this.isToTintStatusBar()) {
               StatusBar.setBackgroundColor(this.shadeStatusBarColor(this.props.pageArray[state.index].backgroundColor, -0.3), false);
